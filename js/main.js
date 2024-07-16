@@ -51,7 +51,9 @@
 
 
 const products = [
-    {name: 'Fresh Honey', price: 1119.00, oldPrice: 2229.00, imgSrc: 'img/Honey.png'},
+    {name: 'Muliflora Honey', price: 1119.00, oldPrice: 2229.00, imgSrc: 'img/honey-1.jpg'},
+    {name: 'Litchi Honey', price: 1119.00, oldPrice: 2229.00, imgSrc: 'img/lithch-honey.jpg'},
+    {name: 'Wild Honey', price: 1119.00, oldPrice: 2229.00, imgSrc: 'img/wild-honey.jpg'},
     {name: 'Fresh Ghee', price: 1119.00, oldPrice: 2229.00, imgSrc: 'img/Ghee.png'},
     {name: 'Fresh Sugar', price: 119.00, oldPrice: 229.00, imgSrc: 'img/Sugar.png'},
     {name: 'Fresh Salt', price: 219.00, oldPrice: 229.00, imgSrc: 'img/Rock Salt.png'},
@@ -62,7 +64,7 @@ const productList = document.getElementById('product-list');
 
 products.forEach((product, index) => {
     const productItem = document.createElement('div');
-    productItem.className = 'product-item wow fadeInUp col-xl-2 col-lg-4 col-md-6';
+    productItem.className = 'product-item wow fadeInUp col-xl-2 col-lg-3 col-md-6';
     productItem.dataset.wowDelay = `${0.1 * (index + 1)}s`;
 
     productItem.innerHTML = `
