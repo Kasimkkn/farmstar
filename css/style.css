@@ -5,6 +5,22 @@
     --light: #F7F8FC;
     --dark: #111111;
 }
+.fa-facebook-f{
+    font-size: 1.4rem;
+    color: rgb(90, 136, 199);
+}
+.fa-instagram{
+    font-size: 1.4rem;
+    color: rgb(162, 119, 211);
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(to bottom , var(--secondary), var(--primary));
+    border-radius: 10px;
+}
 
 .back-to-top {
     position: fixed;
