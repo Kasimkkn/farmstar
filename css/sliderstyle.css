@@ -1,6 +1,6 @@
 /* carousel */
 .carousel{
-    height: 80vh;
+    height: 85vh;
     margin-top: 120px;
     max-width: 100%;
     overflow: hidden;
@@ -41,7 +41,7 @@
 }
 .carousel .list .item .des{
     width: 80%;
-    color: black;
+    color: white;
 }
 .carousel .list .item .buttons{
     display: grid;
@@ -54,10 +54,15 @@
     border: none;
     background-color: #eee;
     border-radius: 5px;
-    border:1px solid var(--primary);
+    border:none;
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 500;
+    transition: all .4s ease-in-out;
+}
+.carousel .list .item .buttons button:hover{
+    background-color: var(--primary);
+    color: #fff;
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;

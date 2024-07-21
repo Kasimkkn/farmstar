@@ -10,34 +10,41 @@ const products = [
 
 const productList = document.getElementById('product-list');
 
-products.forEach((product, index) => {
-    const productItem = document.createElement('div');
-    productItem.className = 'product-item wow fadeInUp col-xl-2 col-lg-3 col-md-6';
-    productItem.dataset.wowDelay = `${0.1 * (index + 1)}s`;
+if (productList) {
+    products.forEach((product, index) => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item wow fadeInUp col-xl-2 col-lg-3 col-md-6';
+        productItem.dataset.wowDelay = `${0.1 * (index + 1)}s`;
 
-    productItem.innerHTML = `
-        <div class="position-relative bg-light overflow-hidden">
-            <img src="${product.imgSrc}" alt="${product.name}">
-            <div style="border-radius:0px 7px 7px 0px" class="bg-secondary text-white position-absolute start-0 top-0 m-0 py-1 px-3">New</div>
-        </div>
-        <div class="text-center p-4">
-            <a class="d-block h5 mb-2" href="#">${product.name}</a>
-            <span class="text-primary me-1">${product.price}</span>
-            <span class="text-body text-decoration-line-through">${product.oldPrice}</span>
-        </div>
-        <div class="d-flex ">
-            <small class="w-50 text-center bg-primary py-2">
-                <a class="text-white" href="#">View detail</a>
-            </small>
-            <small class="w-50 text-center py-2">
-                <a class="text-body" href="#">Add to cart</a>
-            </small>
-        </div>
-    `;
+        // Define the WhatsApp message
+        const whatsappMessage = `Hi, I'm interested in the product ${product.name} priced at ${product.price}.`;
 
-    productList.appendChild(productItem);
-});
+        // Construct the WhatsApp link
+        const whatsappLink = `https://wa.me/+919601510530?text=${encodeURIComponent(whatsappMessage)}`;
 
+        productItem.innerHTML = `
+            <div class="position-relative bg-light overflow-hidden">
+                <img src="${product.imgSrc}" alt="${product.name}">
+                <div style="border-radius:0px 7px 7px 0px" class="bg-secondary text-white position-absolute start-0 top-0 m-0 py-1 px-3">New</div>
+            </div>
+            <div class="text-center p-4">
+                <a class="d-block h5 mb-2" href="#">${product.name}</a>
+                <span class="text-primary me-1">${product.price}</span>
+                <span class="text-body text-decoration-line-through">${product.oldPrice}</span>
+            </div>
+            <div class="d-flex">
+                <small class="w-50 text-center bg-primary py-2">
+                    <a class="text-white contact-us" href="${whatsappLink}" target="_blank">Contact us</a>
+                </small>
+                <small class="w-50 text-center py-2">
+                    <a class="text-body" href="#">Add to cart</a>
+                </small>
+            </div>
+        `;
+
+        productList.appendChild(productItem);
+    });
+}
 
 //step 1: get DOM
 let nextDom = document.getElementById('next');
